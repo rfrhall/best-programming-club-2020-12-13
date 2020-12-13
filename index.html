@@ -10,15 +10,13 @@
     </header>
 
     <main>
-      <section>
+      <section id="products">
         <h2>Products</h2>
 
-        <section class="product-section">
+        <section class="product-sub-section">
           <h3>Available fruit</h3>
           <ul id="available-fruit-list"></ul>
         </section>
-
-        <!-- Vegetable section goes here -->
       </section>
 
       <section>
@@ -30,7 +28,7 @@
     </main>
 
     <script>
-      const availableProducts = {
+      const availableProductsData = {
         fruit: [
           {
             product: 'Apple',
@@ -62,7 +60,7 @@
           'available-fruit-list'
         );
 
-        availableProducts.fruit.forEach((itemData) => {
+        availableProductsData.fruit.forEach((itemData) => {
           const listItemElement = document.createElement('li');
 
           listItemElement.innerText = itemData.product;
