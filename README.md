@@ -16,6 +16,8 @@ Hint 3: All of the Javascript for programmatically creating the fruit section is
 
 [Fork this repository](https://guides.github.com/activities/forking/)
 
+[Install Prettier for VSCode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
 ### Completing the assignment
 
 Make sure to commit your changes as you're making progress on the assignment. You'll receive feedback on the commit messages. Remember, commit messages should be short and sweet, in present-tense with an imperative tone. For example:
