@@ -17,6 +17,11 @@
           <h3>Available fruit</h3>
           <ul id="available-fruit-list"></ul>
         </section>
+
+        <section class="product-sub-section">
+          <h3>Available vegetables</h3>
+          <ul id="available-vegetable-list"></ul>
+        </section>
       </section>
 
       <section>
@@ -57,6 +62,9 @@
 
       function initializeProducts() {
         const fruitListElement = document.getElementById('available-fruit-list')
+        const vegetableListElement = document.getElementById(
+          'available-vegetable-list'
+        )
 
         availableProductsData.fruit.forEach((itemData) => {
           const listItemElement = document.createElement('li')
@@ -64,6 +72,23 @@
           listItemElement.innerText = itemData.product
 
           fruitListElement.appendChild(listItemElement)
+
+          const buttonElement = document.createElement('button')
+
+          buttonElement.classList.add('add-to-cart')
+          buttonElement.dataset.product = itemData.product
+          buttonElement.dataset.price = itemData.price
+          buttonElement.innerText = 'Add +1 to cart'
+
+          listItemElement.appendChild(buttonElement)
+        })
+
+        availableProductsData.vegetables.forEach((itemData) => {
+          const listItemElement = document.createElement('li')
+
+          listItemElement.innerText = itemData.product
+
+          vegetableListElement.appendChild(listItemElement)
 
           const buttonElement = document.createElement('button')
 
