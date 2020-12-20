@@ -53,70 +53,66 @@
             price: '0.30',
           },
         ],
-      };
+      }
 
       function initializeProducts() {
-        const fruitListElement = document.getElementById(
-          'available-fruit-list'
-        );
+        const fruitListElement = document.getElementById('available-fruit-list')
 
         availableProductsData.fruit.forEach((itemData) => {
-          const listItemElement = document.createElement('li');
+          const listItemElement = document.createElement('li')
 
-          listItemElement.innerText = itemData.product;
+          listItemElement.innerText = itemData.product
 
-          fruitListElement.appendChild(listItemElement);
+          fruitListElement.appendChild(listItemElement)
 
-          const buttonElement = document.createElement('button');
+          const buttonElement = document.createElement('button')
 
-          buttonElement.classList.add('add-to-cart');
-          buttonElement.dataset.product = itemData.product;
-          buttonElement.dataset.price = itemData.price;
-          buttonElement.innerText = 'Add +1 to cart';
+          buttonElement.classList.add('add-to-cart')
+          buttonElement.dataset.product = itemData.product
+          buttonElement.dataset.price = itemData.price
+          buttonElement.innerText = 'Add +1 to cart'
 
-          listItemElement.appendChild(buttonElement);
-        });
+          listItemElement.appendChild(buttonElement)
+        })
       }
 
       function initializeCart() {
-        const itemsInCart = [];
+        const itemsInCart = []
 
         Array.from(document.querySelectorAll('.add-to-cart')).forEach(
           (button) => {
             button.addEventListener('click', () => {
-              console.log('clicked add to cart');
+              console.log('clicked add to cart')
 
               itemsInCart.push({
                 product: button.dataset.product,
                 price: Number(button.dataset.price),
-              });
+              })
 
-              const itemsInCartCount = itemsInCart.length;
+              const itemsInCartCount = itemsInCart.length
 
-              let cartTotalOnClick = 0;
+              let cartTotalOnClick = 0
 
               itemsInCart.forEach((item) => {
-                cartTotalOnClick = cartTotalOnClick += item.price;
-              });
+                cartTotalOnClick = cartTotalOnClick += item.price
+              })
 
-              document.getElementById(
-                'cart-count'
-              ).innerText = itemsInCartCount;
+              document.getElementById('cart-count').innerText = itemsInCartCount
 
               document.getElementById(
                 'cart-total'
-              ).innerText = cartTotalOnClick.toFixed(2);
-            });
+              ).innerText = cartTotalOnClick.toFixed(2)
+            })
           }
-        );
+        )
       }
 
       document.addEventListener('DOMContentLoaded', (event) => {
-        console.log('DOM ready');
+        console.log('DOM ready')
 
-        initializeProducts();
-        initializeCart();
-      });
+        initializeProducts()
+        initializeCart()
+      })
     </script>
   </body>
 </html>
